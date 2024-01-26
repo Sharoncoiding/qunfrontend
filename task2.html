@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace endswith startwith学习</title>
+</head>
+<body>
+       
+<script>
+     function longestCommonSuffix(strs) {
+  if (strs.length === 0) {
+    return ""
+    
+  }
+
+  let suffix = strs[0];
+
+  for (let i = 1; i < strs.length; i++) {
+    while (!strs[i].endsWith(suffix)) {
+      suffix = suffix.slice(1);
+
+      if (suffix === "") {
+        return "";
+      }
+    }
+  }
+
+  return suffix;
+}
+
+const strs = ["apple", "around", "about", "app"];
+
+
+const common_suffix = longestCommonSuffix(strs);
+
+console.log(common_suffix); 
+
+</script>
+      
+
+</body>
+</html>
